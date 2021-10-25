@@ -3,44 +3,23 @@
 {% block title %}Player{% endblock %}
 
 {% block body %}
-    <h1>Player</h1>
+    <section class="admin">
+<div class="row">
+<div class="col">
+</div>
+<div class="col-md-10">
+<h1>{{ player.pseudoPlayer }}</h1>
+<h1><img src="{{ asset('uploads/images/' ~ player.imagePlayer) }}" width="500"></h1>
+<h2>{{ player.firstNamePlayer }}</h2>
+<h2>{{ player.lastNamePlayer }}</h2>
+<h2>{{ player.rolePlayer }}</h2>
+<h2>{{ player.datePlayer ? player.datePlayer|date('Y-m-d') : '' }}</h2>
+<h2>{{ player.descriptionPlayer }}</h2>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ player.id }}</td>
-            </tr>
-            <tr>
-                <th>PseudoPlayer</th>
-                <td>{{ player.pseudoPlayer }}</td>
-            </tr>
-            <tr>
-                <th>FirstNamePlayer</th>
-                <td>{{ player.firstNamePlayer }}</td>
-            </tr>
-            <tr>
-                <th>LastNamePlayer</th>
-                <td>{{ player.lastNamePlayer }}</td>
-            </tr>
-            <tr>
-                <th>DatePlayer</th>
-                <td>{{ player.datePlayer ? player.datePlayer|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>DescriptionPlayer</th>
-                <td>{{ player.descriptionPlayer }}</td>
-            </tr>
-            <tr>
-                <th>RolePlayer</th>
-                <td>{{ player.rolePlayer }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('player_index') }}">back to list</a>
-
-    <a href="{{ path('player_edit', {'id': player.id}) }}">edit</a>
-
-    {{ include('player/_delete_form.html.twig') }}
+</div>
+<div class="col">
+<a href="javascript:history.go(-1)"><i class="fas fa-reply"></i></a>
+</div>
+</div>
+</section>
 {% endblock %}

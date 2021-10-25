@@ -3,20 +3,30 @@
 {% block title %}Player index{% endblock %}
 
 {% block body %}
-    <h1>Player index</h1>
+    
 
-    <table class="table">
+    <section class="admin">
+    <h1>Admin</h1>
+    <h2>Joueurs</h2>
+    <div  class="add">
+<a href="{{ path('player_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+<div class="table-responsive">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>PseudoPlayer</th>
-                <th>FirstNamePlayer</th>
-                <th>LastNamePlayer</th>
-                <th>DatePlayer</th>
-                <th>DescriptionPlayer</th>
-                <th>RolePlayer</th>
-                <th>imagePlayer</th>
-                <th>actions</th>
+                <th>Pseudo</th>
+                <th>jeux</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Description</th>
+                <th>Role</th>
+                <th>Image</th>
+                <th>Voir</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
         <tbody>
@@ -24,24 +34,25 @@
             <tr>
                 <td>{{ player.id }}</td>
                 <td>{{ player.pseudoPlayer }}</td>
+                <td>{{ player.game.nameGame }}</td>
                 <td>{{ player.firstNamePlayer }}</td>
                 <td>{{ player.lastNamePlayer }}</td>
                 <td>{{ player.datePlayer ? player.datePlayer|date('Y-m-d') : '' }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ player.imagePlayer) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/images/' ~ player.imagePlayer) }}" height="100"></td>
                 <td>{{ player.descriptionPlayer }}</td>
                 <td>{{ player.rolePlayer }}</td>
-                <td>
-                    <a href="{{ path('player_show', {'id': player.id}) }}">show</a>
-                    <a href="{{ path('player_edit', {'id': player.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
+                <td><a href="{{ path('player_show', {'id': player.id}) }}"><i class="fas fa-eye"></a></td>
+                <td><a href="{{ path('player_edit', {'id': player.id}) }}"><i class="fas fa-edit"></a></td>
+                <td>{{ include('player/_delete_form.html.twig') }}</td>
+            
+     {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="10">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('player_new') }}">Create new</a>
+<div  class="add">
+<a href="{{ path('player_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
 {% endblock %}

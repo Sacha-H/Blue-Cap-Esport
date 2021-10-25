@@ -29,6 +29,7 @@ class CategoryProduct
      */
     private $product;
 
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -59,25 +60,5 @@ class CategoryProduct
         return $this->product;
     }
 
-    public function addProduct(Product $product): self
-    {
-        if (!$this->product->contains($product)) {
-            $this->product[] = $product;
-            $product->setCategoryProduct($this);
-        }
 
-        return $this;
-    }
-
-    public function removeProduct(Product $product): self
-    {
-        if ($this->product->removeElement($product)) {
-            // set the owning side to null (unless already changed)
-            if ($product->getCategoryProduct() === $this) {
-                $product->setCategoryProduct(null);
-            }
-        }
-
-        return $this;
-    }
 }

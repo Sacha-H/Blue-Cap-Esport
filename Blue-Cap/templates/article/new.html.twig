@@ -1,11 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}nouvel Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+<section class="admin">
+<div class="row">
+<div class="col">
+</div>
+<div class="col-md-10">
+<h1>Admin </h1>
+</div>
+<div class="col">
+<a href="{{ path('article_index') }}"><i class="fas fa-reply"></i></a>
+</div>
+</div>
+    <h2>Créer un nouvel Article</h2>
 
     {{ include('article/_form.html.twig') }}
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    
+    </section>
 {% endblock %}

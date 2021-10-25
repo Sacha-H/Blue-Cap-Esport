@@ -1,4 +1,15 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <section class="block">
+    <table>
+    <tr>
+    <td>
+        {{ form_row(form.nameCategoryProduct, {
+            label: 'Nom'
+        }) }}
+    </td>
+    </tr>
+    </table>
+    <button class="btn"><a><i class="fas fa-check-circle"></i></a></button>
+    </section>
+    <button class="btn"></button>
 {{ form_end(form) }}

@@ -37,6 +37,7 @@ class Article
      */
     private $imageArticle;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,4 +90,5 @@ class Article
 
         return $this;
     }
+
 }

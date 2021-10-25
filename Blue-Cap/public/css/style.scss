@@ -7,19 +7,36 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', serif !important;
+    background-color: #175180 !important;
+    color: #013856 !important;
 }
 
 h1{
-    color: #000;
+    padding-top: 50px;
+    text-align: center;
 }
+
+h2{
+    padding-top: 50px;
+    text-align: center;
+}
+
+h3{
+    padding-top: 50px;
+    text-align: center;
+}
+
 
 
 
 // HEADER
 
 nav{
+    background-color: #a4c6e1 !important;
     a{
-    color: #59a7d6 !important;
+    color: #013856 !important;
+    font-family: 'Roboto Slab', serif;
     }
 }
 
@@ -27,4 +44,60 @@ video{
     
     width: 100%;
     z-index: -10;
+}
+
+// CLASS ADMIN
+
+.admin{
+    background-color: #175180;
+    padding: 50px;
+
+    .add{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    th, td{
+        vertical-align: middle;
+        text-align: center;
+        
+    }
+
+    .block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a{
+       font-size: 50px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+
+        i{
+        font-size: 50px;
+        color: #013856;
+        
+        }
+    }
+
+    a:hover{
+        transition: 1s;
+        background-color: #013856 ;
+        i{
+           
+            color: #a4c6e1 ;
+        }
+
+    }
+
+}
+
+
+// CLASS INDEX
+
+.index{
+    background-color: rgb(145, 157, 192);
 }

@@ -3,11 +3,21 @@
 {% block title %}Edit Player{% endblock %}
 
 {% block body %}
-    <h1>Edit Player</h1>
+<section class="admin">
+<div class="row">
+<div class="col">
+</div>
+<div class="col-md-10">
+<h1>Admin </h1>
+</div>
+<div class="col">
+<a href="{{ path('player_index') }}"><i class="fas fa-reply"></i></a>
+</div>
+</div>
+    <h2>Edit Player</h2>
 
     {{ include('player/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('player_index') }}">back to list</a>
 
-    {{ include('player/_delete_form.html.twig') }}
+    </section>
 {% endblock %}

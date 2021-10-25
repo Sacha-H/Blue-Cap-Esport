@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Blue Cap Gaming
 {% endblock %}
 
 {% block body %}
@@ -11,7 +11,9 @@
 			<video autoplay muted loop>
 				<source src="{{ asset('video/videointro.mp4')}}" type="video/mp4">
 			</video>
-			<h1>Blue Cap Gaming</h1>
+                        
+			<h1>BLUE CAP GAMING</h1>
+                       
 		</section>
 		<section class="news container-fluid">
 			<h2>Les News</h2>
@@ -67,7 +69,7 @@
                                 </article>
                         </section>
                 </section>
-                <section class="teams">
+                <section class="teams container-fluid">
                         <h2>Les équipes</h2>
 
                         {% for game in game %}

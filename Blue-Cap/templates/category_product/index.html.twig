@@ -3,14 +3,21 @@
 {% block title %}CategoryProduct index{% endblock %}
 
 {% block body %}
-    <h1>CategoryProduct index</h1>
-
-    <table class="table">
+   <section class="admin">
+    <h1>Admin</h1>
+    <h2>Category</h2>
+    <div  class="add">
+<a href="{{ path('category_product_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+<div class="table-responsive">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameCategoryProduct</th>
-                <th>actions</th>
+                <th>nom</th>
+                <th>voir</th>
+                <th>modifier</th>
+                <th>supprimer</th>
             </tr>
         </thead>
         <tbody>
@@ -18,10 +25,9 @@
             <tr>
                 <td>{{ category_product.id }}</td>
                 <td>{{ category_product.nameCategoryProduct }}</td>
-                <td>
-                    <a href="{{ path('category_product_show', {'id': category_product.id}) }}">show</a>
-                    <a href="{{ path('category_product_edit', {'id': category_product.id}) }}">edit</a>
-                </td>
+                <td><a href="{{ path('category_product_show', {'id': category_product.id}) }}"><i class="fas fa-eye"></a></td>
+                <td><a href="{{ path('category_product_edit', {'id': category_product.id}) }}"><i class="fas fa-edit"></a></td>
+                <td><a href="{{ path('category_product_new') }}"><i class="fas fa-plus-circle"></a></td>
             </tr>
         {% else %}
             <tr>
@@ -30,6 +36,11 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
+      <div  class="add">
+<a href="{{ path('article_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+    </section>
 
-    <a href="{{ path('category_product_new') }}">Create new</a>
+    <a href="{{ path('category_product_new') }}"><i class="fas fa-plus-circle"></a>
 {% endblock %}

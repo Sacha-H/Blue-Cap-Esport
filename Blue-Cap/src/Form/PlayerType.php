@@ -9,7 +9,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 
 class PlayerType extends AbstractType
@@ -20,7 +22,9 @@ class PlayerType extends AbstractType
             ->add('pseudoPlayer')
             ->add('firstNamePlayer')
             ->add('lastNamePlayer')
-            ->add('datePlayer')
+            ->add('datePlayer', DateType::class, [
+                    'widget' => 'single_text',
+                ])
             ->add('descriptionPlayer')
             ->add('rolePlayer')
             ->add('imagePlayer', FileType::class, [

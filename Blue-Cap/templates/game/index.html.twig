@@ -3,15 +3,22 @@
 {% block title %}Game index{% endblock %}
 
 {% block body %}
-    <h1>Game index</h1>
-
-    <table class="table">
+   <section class="admin">
+    <h1>Admin</h1>
+    <h2>Jeux</h2>
+    <div  class="add">
+<a href="{{ path('game_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+<div class="table-responsive">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NameGame</th>
-                <th>ImageGame</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>voir</th>
+                <th>modifier</th>
+                <th>supprimer</th>
             </tr>
         </thead>
         <tbody>
@@ -19,20 +26,21 @@
             <tr>
                 <td>{{ game.id }}</td>
                 <td>{{ game.nameGame }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ game.imageGame) }}" width="100"></td>
+                <td><img src="{{ asset('uploads/images/' ~ game.imageGame) }}" height="100"></td>
                 
-                <td>
-                    <a href="{{ path('game_show', {'id': game.id}) }}">show</a>
-                    <a href="{{ path('game_edit', {'id': game.id}) }}">edit</a>
-                </td>
+                <td><a href="{{ path('game_show', {'id': game.id}) }}"><i class="fas fa-eye"></a></td>
+                <td><a href="{{ path('game_edit', {'id': game.id}) }}"><i class="fas fa-edit"></a></td>
+                 <td>{{ include('game/_delete_form.html.twig') }}</td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('game_new') }}">Create new</a>
+   <div  class="add">
+<a href="{{ path('game_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
 {% endblock %}

@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Player{% endblock %}
+{% block title %}Nouveau Joueur{% endblock %}
 
 {% block body %}
-    <h1>Create new Player</h1>
+<section class="admin">
+<div class="row">
+<div class="col">
+</div>
+<div class="col-md-10">
+<h1>Admin </h1>
+</div>
+<div class="col">
+<a href="{{ path('player_index') }}"><i class="fas fa-reply"></i></a>
+</div>
+</div>
+    <h1>Créer un nouveau Joueur</h1>
 
     {{ include('player/_form.html.twig') }}
 
-    <a href="{{ path('player_index') }}">back to list</a>
+   
 {% endblock %}

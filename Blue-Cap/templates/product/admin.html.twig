@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit Admin{% endblock %}
+
+{% block body %}
+    
+
+    <section class="admin">
+    <h1>Admin</h1>
+    <h2>Produits</h2>
+    <div  class="add">
+<a href="{{ path('product_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+<div class="table-responsive">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Categorie</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Stock</th>
+                <th>Voir</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ product.imageProduct) }}" width="100"></td>
+                <td>{{ product.categoryProduct.nameCategoryProduct }}</td>
+                <td>{{ product.nameProduct }}</td>
+                <td>{{ product.descriptionProduct }}</td>
+                <td>{{ product.priceProduct }}</td>
+                <td>{{ product.stockProduct }}</td>
+                <td><a href="{{ path('product_show', {'id': product.id}) }}"><i class="fas fa-eye"></a></td>
+                <td><a href="{{ path('product_edit', {'id': product.id}) }}"><i class="fas fa-edit"></a></td>
+                <td>{{ include('product/_delete_form.html.twig') }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   <div  class="add">
+<a href="{{ path('product_new') }}"><i class="fas fa-plus-circle"></i></a>
+</div>
+
+
+   
+{% endblock %}

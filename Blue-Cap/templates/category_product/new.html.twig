@@ -3,9 +3,19 @@
 {% block title %}New CategoryProduct{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryProduct</h1>
-
+    <section class="admin">
+<div class="row">
+<div class="col">
+</div>
+<div class="col-md-10">
+<h1>Admin </h1>
+</div>
+<div class="col">
+<a href="{{ path('category_product_index') }}"><i class="fas fa-reply"></i></a>
+</div>
+</div>
+<h2>Créer un nouvelle catégorie</h2>
     {{ include('category_product/_form.html.twig') }}
 
-    <a href="{{ path('category_product_index') }}">back to list</a>
+    </section>
 {% endblock %}

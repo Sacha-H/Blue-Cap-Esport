@@ -1,4 +1,66 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <section class="block">
+    <table>
+    <tr>
+    <td>
+        {{ form_row(form.pseudoPlayer, {
+            label: 'Pseudo'
+        }) }}
+    </td>
+    </tr>
+    <tr>
+    <td>
+        {{ form_row(form.game, {
+            label: 'Jeux'
+        }) }}
+</td>
+</tr>
+    <tr>
+    <td>
+        
+        {{ form_row(form.firstNamePlayer, {
+            label: 'Nom'
+        }) }}
+      </td>
+    </tr>
+    <tr>
+    <td>
+
+        {{ form_row(form.lastNamePlayer, {
+            label: 'Prénom'
+        }) }}
+</td>
+    </tr>
+    <tr>
+    <td>
+        {{ form_row(form.datePlayer, {
+            label: 'Date de naissance'
+        }) }}
+</td>
+</tr>
+    <tr>
+ <td>
+        {{ form_row(form.imagePlayer, {
+            label: 'Image'
+        }) }}
+</td>
+</tr>
+    <tr>
+<td>
+        {{ form_row(form.descriptionPlayer, {
+            label: 'Description'
+        }) }}
+</td>
+</tr>
+    <tr>
+<td>
+        {{ form_row(form.rolePlayer, {
+            label: 'Rôle'
+        }) }}
+</td>
+    </tr>
+    </table>
+    <button class="btn"><a><i class="fas fa-check-circle"></i></a></button>
+    </section>
+    
 {{ form_end(form) }}

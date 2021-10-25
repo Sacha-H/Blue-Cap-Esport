@@ -3,10 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\CategoryProduct;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
@@ -17,7 +20,9 @@ class ArticleType extends AbstractType
         $builder
             ->add('titleArticle')
             ->add('descriptionArticle')
-            ->add('dateArticle')
+            ->add('dateArticle', DateType::class, [
+                'widget' => 'single_text',
+            ])
             ->add('imageArticle', FileType::class, [
                 'label' => 'Photo',
                 'mapped' => false,

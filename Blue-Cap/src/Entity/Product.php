@@ -47,6 +47,7 @@ class Product
      */
     private $imageProduct;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -123,4 +124,5 @@ class Product
 
         return $this;
     }
+
 }

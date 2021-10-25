@@ -3,32 +3,17 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>TitleArticle</th>
-                <td>{{ article.titleArticle }}</td>
-            </tr>
-            <tr>
-                <th>DescriptionArticle</th>
-                <td>{{ article.descriptionArticle }}</td>
-            </tr>
-            <tr>
-                <th>DateArticle</th>
-                <td>{{ article.dateArticle ? article.dateArticle|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                <h1>{{ article.titleArticle }}</h1>
+                <h1><img src="{{ asset('uploads/images/' ~ article.imageArticle) }}" width="500"></h1>
+            
+                <h2>DescriptionArticle</h2>
+                
+                <h3>{{ article.dateArticle ? article.dateArticle|date('Y-m-d') : '' }}</h3>
+    
 
-    {{ include('article/_delete_form.html.twig') }}
+
+    
 {% endblock %}
